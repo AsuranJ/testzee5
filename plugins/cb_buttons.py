@@ -1,7 +1,7 @@
 import pyrogram
 
 from plugins.zee5_dl import zee5_execute
-from plugins.zee5_dlm import zee5_execute
+from plugins.zee5_dlm import zee5m_execute
 
 
 @pyrogram.Client.on_callback_query()
