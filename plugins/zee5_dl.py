@@ -63,14 +63,8 @@ async def zee5_capture(bot, update):
             req2 = requests.get("https://useraction.zee5.com/token/platform_tokens.php?platform_name=web_app").json()["token"]
             headers["X-Access-Token"] = req2
             req3 = requests.get("https://useraction.zee5.com/token").json()    
-            if "movies" in w:
-                    r1 = requests.get(li["token"] + "-".join(rgx),
-                                                headers=headers, 
-                                                params={"translation":"en", "country":"IN"}).json()
-                    g1 = (r1["hls"][0].replace("drm", "hls") + req1["video_token"])
-                    file_name = r1["title"]
-                    url = "https://" + li["url"] + g1
-            elif "tvshows" or "originals" in w:
+
+            if "tvshows" or "originals" in w:
                     r2 = requests.get(li["token"] + "-".join(rgx), 
                                                 headers=headers, 
                                                 params={"translation":"en", "country":"IN"}).json()
@@ -221,7 +215,7 @@ async def zee5_execute(bot, update):
         youtube_dl_url = zee5_capture.url
         
         linksplit = update.message.reply_to_message.text.split("/")
-        videoname = linksplit[+5]
+        videoname = linksplit[+7]
         logger.info(videoname)
         
         custom_file_name = videoname + ".mp4"
