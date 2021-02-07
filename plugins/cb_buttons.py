@@ -12,3 +12,10 @@ async def formatbuttons1(bot, update):
         
     elif "closeformat" in update.data:     
         await update.message.delete()
+
+
+@pyrogram.Client.on_callback_query()
+async def formatbuttonsm(bot, update):
+       
+    if "|" in update.data:
+        await zee5m_execute(bot, update)
