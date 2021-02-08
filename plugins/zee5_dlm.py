@@ -132,7 +132,7 @@ async def zee5_capture(bot, update):
                     cb_string_file = "{}|{}|{}".format(
                         "file", format_id, format_ext)
                     if format_string is not None and not "audio only" in format_string:
-                        ikeyboard = [
+                        ikeyboard1 = [
                             InlineKeyboardButton(
                                 "🎞 (" + format_string + ") " + approx_file_size + " ",
                                 callback_data=(cb_string_video).encode("UTF-8")
@@ -142,7 +142,7 @@ async def zee5_capture(bot, update):
                                 callback_data=(cb_string_file).encode("UTF-8")
                             )
                         ]                           
-                        inline_keyboard.append(ikeyboard)
+                        inline_keyboard.append(ikeyboard1)
                         
             inline_keyboard.append([
                 InlineKeyboardButton(
