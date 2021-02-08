@@ -17,5 +17,5 @@ async def formatbuttons1(bot, update):
 @pyrogram.Client.on_callback_query()
 async def formatbuttons2(bot, update):
        
-    if "|" in update.data:
+    if "|" in update.data1:
         await zee5m_execute(bot, update)
