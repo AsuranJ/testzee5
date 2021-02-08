@@ -77,7 +77,7 @@ async def zee5_capture1(bot, update):
             return
             
     else:
-        await update.reply_text("I can download from Zee5 links only! Use @UploadHEXbot for other links 😇", quote=True)
+        await update.reply_text("I can download from Zee5 links only! 😇", quote=True)
         return
     
     try:
@@ -207,7 +207,7 @@ async def zee5m_execute(bot, update):
             )
             return False
         
-        youtube_dl_url = zee5_capture.url
+        youtube_dl_url = zee5_capture1.url
         
         linksplit = update.message.reply_to_message.text.split("/")
         videoname = linksplit[+5]
